@@ -1,0 +1,19 @@
+# Task ID: 6
+# Title: Create Primary CTA Button Component
+# Status: pending
+# Dependencies: 2, 5
+# Priority: high
+# Description: Implement the primary call-to-action button with different states and deep linking to Telegram.
+# Details:
+1. Create a reusable CTA button component with the following states:
+   - Disabled: Grayed out before valid code entry
+   - Enabled: Bright green with pulsing glow effect
+   - Hover: Intensified glow
+2. Implement the button text: "Launch Polyburg Terminal →"
+3. Add deep linking functionality to `https://t.me/polyburgbot?start=[invite_code]`
+4. Ensure the button is only enabled after successful invite code validation
+5. Implement the CSS animations for the glow effects
+6. Make the button fully accessible with keyboard navigation support
+
+# Test Strategy:
+Test all button states to ensure they display correctly. Verify that the deep link works on different devices and browsers. Test the button with keyboard navigation and screen readers to ensure accessibility. Verify that the animations work correctly and don't cause performance issues.

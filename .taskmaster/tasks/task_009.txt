@@ -1,0 +1,18 @@
+# Task ID: 9
+# Title: Create How It Works Section
+# Status: pending
+# Dependencies: 3
+# Priority: medium
+# Description: Implement the section explaining the three simple steps to start using Polyburg Terminal.
+# Details:
+1. Create a component for the How It Works section
+2. Implement three step cards with the following content:
+   - Step 1: "Enter Code" - "Get your exclusive invite from trusted sources"
+   - Step 2: "Launch Terminal" - "Open Polyburg in Telegram with one tap"
+   - Step 3: "Start Tracking" - "Follow smart money and never miss alpha again"
+3. Add visual indicators for the step sequence
+4. Implement responsive layout for the step cards
+5. Consider adding subtle animations to enhance the user experience
+
+# Test Strategy:
+Verify that the steps display in the correct order and are clearly numbered. Test the layout at different screen sizes to ensure responsiveness. Validate the accessibility of the step sequence.

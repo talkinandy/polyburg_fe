@@ -1,0 +1,24 @@
+# Task ID: 8
+# Title: Implement Key Features Section
+# Status: pending
+# Dependencies: 2, 3
+# Priority: medium
+# Description: Develop the key features section showcasing the three core benefits of Polyburg Terminal.
+# Details:
+1. Create a component for the key features section
+2. Implement three feature cards with the following content:
+   - Smart Wallet Tracking
+     - Icon: Terminal cursor
+     - Text: "Track the top 100 most profitable Polymarket wallets in real-time"
+   - AI-Powered Insights
+     - Icon: Brain/chip hybrid
+     - Text: "Get intelligent alerts when smart money makes significant moves"
+   - Daily Alpha Updates
+     - Icon: Refresh/chart
+     - Text: "Fresh wallet rankings and opportunity analysis delivered daily"
+3. Implement responsive layout for the feature cards
+4. Add appropriate animations or hover effects
+5. Ensure consistent styling with the overall theme
+
+# Test Strategy:
+Test the layout of the feature cards at different screen sizes. Verify that the icons display correctly. Test any animations or hover effects to ensure they work as expected. Validate the accessibility of the feature cards.

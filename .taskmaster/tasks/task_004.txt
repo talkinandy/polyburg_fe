@@ -1,0 +1,18 @@
+# Task ID: 4
+# Title: Develop Hero Section Component
+# Status: pending
+# Dependencies: 2, 3
+# Priority: high
+# Description: Create the hero section with headline, subheadline, and terminal-style interface showing live wallet activity feed.
+# Details:
+1. Create a Hero component with the following elements:
+   - Headline: "See what smart wallets are buying before everyone else notices"
+   - Subheadline: "Real-time intelligence on Polymarket's most profitable traders. AI-powered insights. Daily wallet rankings. Actionable signals."
+   - Visual: Terminal-style interface showing wallet activity feed
+2. Implement subtle scanline animation effect as specified in the design requirements
+3. Ensure the component is fully responsive
+4. Optimize the hero image/animation for performance
+5. Add appropriate semantic HTML for accessibility
+
+# Test Strategy:
+Verify that the hero section renders correctly across all device sizes. Test the animation performance to ensure it doesn't impact page load times. Validate the accessibility of the component using tools like Lighthouse or axe.

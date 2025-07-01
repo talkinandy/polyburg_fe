@@ -1,0 +1,18 @@
+# Task ID: 10
+# Title: Develop Pricing Preview Section
+# Status: pending
+# Dependencies: 3
+# Priority: medium
+# Description: Create the pricing preview section showing free and premium tier options.
+# Details:
+1. Create a component for the pricing preview section
+2. Implement two pricing cards with the following content:
+   - Free Tier: "3-5 daily smart wallet alerts"
+   - Premium: "$250/year for unlimited intelligence"
+3. Add a note: "Early access users get special launch pricing"
+4. Style the pricing cards to match the terminal theme
+5. Implement responsive layout for the pricing cards
+6. Consider adding visual elements to highlight the premium tier
+
+# Test Strategy:
+Test the layout of the pricing cards at different screen sizes. Verify that the pricing information is clearly displayed. Ensure that the premium tier is appropriately highlighted.

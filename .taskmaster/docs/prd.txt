@@ -1,0 +1,229 @@
+# Product Requirements Document: Polyburg Landing Page
+
+## 1. Executive Summary
+
+### Product Overview
+Polyburg Terminal v1.0 is a Telegram bot that provides real-time intelligence on Polymarket's most profitable traders. It tracks smart wallet movements, offers AI-powered insights, and delivers actionable trading signals - helping traders "see what smart wallets are buying before everyone else notices."
+
+### Objectives
+- Convert visitors into active Telegram bot users through invite-only access
+- Clearly communicate the unique value of smart wallet tracking
+- Create urgency around early access to capitalize on the $1B+ Polymarket opportunity
+- Position Polyburg as the professional alternative to basic Twitter alerts
+
+### Business Context
+- **Market Opportunity**: $1B+ Polymarket trading volume with no comprehensive tracking solution
+- **Competitive Landscape**: Only @whalewatchpoly exists with basic alerts
+- **Business Model**: Freemium SaaS - 3-5 free daily alerts, $250/year premium
+
+## 2. User Personas
+
+### Primary Persona: The Alpha-Seeking Polymarket Trader
+- **Demographics**: 22-35 years old, crypto-native, active on Polymarket
+- **Pain Points**: 
+  - Can't track smart wallet movements in real-time
+  - Missing profitable opportunities others are capitalizing on
+  - Relying on scattered, unreliable information sources
+- **Goals**: Follow smart money, maximize returns, get actionable signals
+
+### Secondary Persona: The Sophisticated Prediction Market Trader
+- **Demographics**: 28-45 years old, professional trading background
+- **Pain Points**: 
+  - Lacks professional-grade tools for prediction markets
+  - Needs systematic approach to tracking profitable wallets
+- **Goals**: Systematic edge through data, consistent profitable trading
+
+## 3. Functional Requirements
+
+### 3.1 Core Components
+
+#### Hero Section
+- **Headline**: "See what smart wallets are buying before everyone else notices"
+- **Subheadline**: "Real-time intelligence on Polymarket's most profitable traders. AI-powered insights. Daily wallet rankings. Actionable signals."
+- **Visual**: Terminal-style interface showing live wallet activity feed (animated or static mockup)
+
+#### Invite Code Entry System
+- **Input Field**: 
+  - Placeholder: "Enter exclusive invite code"
+  - Validation: On-submit validation
+  - Success state: Green glow effect
+  - Error state: Red text "Invalid invite code - try again"
+- **Submit Button**: "Unlock Access"
+
+#### Primary CTA
+- **Button Text**: "Launch Polyburg Terminal →"
+- **Action**: Deep link to `https://t.me/polyburgbot?start=[invite_code]`
+- **States**: 
+  - Disabled: Grayed out before valid code entry
+  - Enabled: Bright green with pulsing glow effect
+  - Hover: Intensified glow
+
+### 3.2 Content Sections
+
+#### The Problem (Brief section)
+"Polymarket traders are flying blind. While smart wallets consistently profit from early positions, you're left guessing. Until now."
+
+#### Key Features (3 core benefits)
+1. **Smart Wallet Tracking**
+   - Icon: Terminal cursor
+   - Text: "Track the top 100 most profitable Polymarket wallets in real-time"
+
+2. **AI-Powered Insights**
+   - Icon: Brain/chip hybrid
+   - Text: "Get intelligent alerts when smart money makes significant moves"
+
+3. **Daily Alpha Updates**
+   - Icon: Refresh/chart
+   - Text: "Fresh wallet rankings and opportunity analysis delivered daily"
+
+#### How It Works (3 simple steps)
+1. **Enter Code**: "Get your exclusive invite from trusted sources"
+2. **Launch Terminal**: "Open Polyburg in Telegram with one tap"
+3. **Start Tracking**: "Follow smart money and never miss alpha again"
+
+#### Pricing Preview
+- **Free Tier**: "3-5 daily smart wallet alerts"
+- **Premium**: "$250/year for unlimited intelligence"
+- Note: "Early access users get special launch pricing"
+
+#### Social Proof Section
+- Placeholder: "Join [X] traders already tracking smart money"
+- Placeholder: "$[X]M in profitable trades identified"
+- Placeholder for 2-3 testimonials from beta users
+
+### 3.3 Technical Specifications
+
+#### Tech Stack
+- **Framework**: Next.js 14+
+- **Styling**: Magic UI components + Tailwind CSS
+- **Analytics**: Plausible Analytics
+- **Hosting**: Netlify
+- **Database**: PostgreSQL for invite codes and conversion tracking
+
+#### Responsive Design
+- **Mobile-first**: 360px minimum width
+- **Breakpoints**: 
+  - Mobile: up to 640px
+  - Tablet: 641px - 1024px
+  - Desktop: 1025px+
+
+#### Performance Targets
+- Lighthouse Performance: > 95
+- First Contentful Paint: < 1.5s
+- Time to Interactive: < 2.5s
+
+## 4. Design Requirements
+
+### Visual Identity
+- **Theme**: Retro Bloomberg terminal meets modern minimalism
+- **Primary Colors**: 
+  - Terminal Green: #00FF41
+  - Deep Black: #0A0A0A
+  - Success Green: #10B981
+  - Alert Amber: #F59E0B
+- **Typography**: 
+  - Headers: Space Mono or JetBrains Mono
+  - Body: Inter for readability
+- **Effects**: 
+  - Subtle scanline animation on hero
+  - Glowing text for CTAs
+  - Smooth hover transitions
+
+### UI Components
+- **Buttons**: Sharp corners, terminal-style borders, glow effects
+- **Input Fields**: Minimal with focus glow
+- **Cards**: Dark with subtle green border accent
+- **Animations**: CSS-only for performance
+
+## 5. Copy Strategy
+
+### Voice & Tone
+- **Confident**: "This is how professionals trade"
+- **Urgent**: "Smart money is moving now"
+- **Accessible**: Technical but not intimidating
+- **Exclusive**: "Not everyone gets access"
+
+### Key Messaging Hierarchy
+1. **Primary**: See what smart wallets are buying first
+2. **Secondary**: AI-powered, real-time intelligence
+3. **Tertiary**: Simple, effective, profitable
+
+### CTA Copy Variations for Testing
+- "Launch Polyburg Terminal →"
+- "Start Tracking Smart Money →"
+- "Get Your Edge Now →"
+
+## 6. Analytics & Tracking
+
+### Plausible Events
+- `page_view`: Landing page visit
+- `invite_code_submitted`: Form submission
+- `invite_code_valid`: Successful validation
+- `invite_code_invalid`: Failed validation
+- `telegram_launch`: CTA click
+- `scroll_depth`: 25%, 50%, 75%, 100%
+
+### Conversion Funnel
+1. Landing page visit
+2. Invite code entry attempt
+3. Successful validation
+4. Telegram bot launch
+5. Bot activation (tracked separately)
+
+### Key Metrics
+- **Primary**: Invite code → Bot launch conversion rate
+- **Secondary**: Time to conversion, bounce rate
+- **Tertiary**: Scroll depth, return visits
+
+## 7. Launch Strategy
+
+### Pre-Launch Checklist
+- [ ] Invite code database setup with validation API
+- [ ] Telegram deep link tested on iOS/Android/Desktop
+- [ ] Plausible tracking verified
+- [ ] Mobile responsiveness QA complete
+- [ ] Page speed optimization verified
+- [ ] Meta tags and OG images configured
+- [ ] SSL certificate active
+
+### Soft Launch Plan
+1. Deploy with limited invite codes for influencer's audience
+2. Monitor conversion rates and technical issues
+3. Gather initial user feedback
+4. Iterate on messaging if needed
+5. Scale invite code distribution
+
+## 8. Future Enhancements
+
+### Phase 2 Features
+- Live wallet activity ticker
+- Waitlist when invite codes exhausted
+- Email capture for updates
+- Referral system for existing users
+- Demo video showing terminal in action
+
+### Potential A/B Tests
+- Headline variations focusing on different benefits
+- CTA button copy and styling
+- Pricing visibility on landing page
+- Social proof numbers and testimonials
+- Invite code vs waitlist approach
+
+## Appendix
+
+### SEO Considerations
+- **Title**: "Polyburg - Smart Wallet Tracking for Polymarket Traders"
+- **Description**: "See what profitable Polymarket wallets are buying before everyone else. AI-powered insights and real-time alerts."
+- **Keywords**: polymarket, prediction markets, smart wallets, trading signals
+
+### Error Handling
+- Invalid invite code: Clear error message with retry
+- Telegram not installed: Fallback to web.telegram.org
+- JavaScript disabled: Basic HTML fallback
+- Slow connection: Loading states for all interactions
+
+### Accessibility
+- WCAG 2.1 AA compliance
+- Keyboard navigation support
+- High contrast mode compatible
+- Screen reader friendly markup 

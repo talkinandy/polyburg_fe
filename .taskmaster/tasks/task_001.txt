@@ -1,0 +1,18 @@
+# Task ID: 1
+# Title: Setup Next.js 14+ Project with Tailwind CSS
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Initialize the project repository with Next.js 14+ and configure Tailwind CSS for styling according to the PRD specifications.
+# Details:
+1. Create a new Next.js project using `npx create-next-app@latest polyburg-landing`
+2. Configure Tailwind CSS with the project
+3. Set up the project structure with appropriate folders for components, pages, styles, and utilities
+4. Configure ESLint and Prettier for code quality
+5. Initialize Git repository and create initial commit
+6. Configure the project for TypeScript support
+7. Set up environment variables for development, staging, and production
+8. Install Magic UI components as specified in the PRD
+
+# Test Strategy:
+Verify that the project builds successfully with `npm run build`. Ensure that Tailwind CSS is properly configured by testing a simple component with Tailwind classes. Confirm that the project structure follows best practices for Next.js applications.

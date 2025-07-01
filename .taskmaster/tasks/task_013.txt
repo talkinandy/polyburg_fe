@@ -1,0 +1,20 @@
+# Task ID: 13
+# Title: Implement PostgreSQL Database for Invite Codes
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Set up a PostgreSQL database to store and validate invite codes and track conversions.
+# Details:
+1. Set up a PostgreSQL database instance
+2. Create the necessary tables for invite codes and conversion tracking
+3. Implement database schema with the following tables:
+   - `invite_codes`: Store valid invite codes and their usage status
+   - `conversions`: Track successful conversions with timestamps
+4. Create API endpoints for:
+   - Validating invite codes
+   - Recording successful conversions
+5. Implement database connection pooling for performance
+6. Set up proper error handling for database operations
+
+# Test Strategy:
+Test the database connection and operations. Verify that invite codes can be validated correctly. Test the API endpoints with valid and invalid data. Ensure that conversions are properly tracked in the database.

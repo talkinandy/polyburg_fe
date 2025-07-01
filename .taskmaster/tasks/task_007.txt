@@ -1,0 +1,15 @@
+# Task ID: 7
+# Title: Develop Problem Statement Section
+# Status: pending
+# Dependencies: 3
+# Priority: medium
+# Description: Create the brief problem statement section highlighting the issue Polyburg solves.
+# Details:
+1. Create a component for the problem statement section
+2. Implement the text: "Polymarket traders are flying blind. While smart wallets consistently profit from early positions, you're left guessing. Until now."
+3. Add appropriate styling that matches the terminal theme
+4. Ensure the section is responsive and maintains readability at all screen sizes
+5. Consider adding subtle animation or visual elements to enhance the message
+
+# Test Strategy:
+Verify that the section renders correctly across all device sizes. Test the readability of the text at different screen sizes. Ensure that any animations or visual elements don't distract from the message.

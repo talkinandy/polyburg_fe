@@ -1,0 +1,304 @@
+import { BentoCard, BentoGrid } from '@/components/magicui/bento-grid';
+import Terminal from '@/components/magicui/terminal';
+import NumberTicker from '@/components/magicui/number-ticker';
+import RetroGrid from '@/components/magicui/retro-grid';
+import { AnimatedList, TradingActivity, WalletRanking } from '@/components/magicui/animated-list';
+
+export default function HomePage() {
+  // Demo data for Bloomberg-style displays
+  const demoTradingActivity = [
+    {
+      wallet: '0x42a1...9f3e',
+      action: 'BUY' as const,
+      amount: 12450,
+      market: 'Trump 2024',
+      price: 67.5,
+      timestamp: new Date(Date.now() - 60000),
+    },
+    {
+      wallet: '0x7b8c...2d1a',
+      action: 'SELL' as const,
+      amount: 8920,
+      market: 'Fed Rate Cut',
+      price: 34.2,
+      timestamp: new Date(Date.now() - 120000),
+    },
+    {
+      wallet: '0x9e3f...5c4b',
+      action: 'BUY' as const,
+      amount: 7330,
+      market: 'BTC $100k',
+      price: 89.1,
+      timestamp: new Date(Date.now() - 180000),
+    },
+  ];
+
+  const demoWalletRankings = [
+    {
+      rank: 1,
+      wallet: '0x42a1...9f3e',
+      profit24h: 12450,
+      winRate: 84.2,
+      totalTrades: 47,
+      isActive: true,
+    },
+    {
+      rank: 2,
+      wallet: '0x7b8c...2d1a',
+      profit24h: 8920,
+      winRate: 79.6,
+      totalTrades: 33,
+    },
+    {
+      rank: 3,
+      wallet: '0x9e3f...5c4b',
+      profit24h: 7330,
+      winRate: 76.8,
+      totalTrades: 28,
+    },
+  ];
+
+  // Structured data for SEO
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Polyburg Terminal',
+    applicationCategory: 'FinanceApplication',
+    description: 'Professional-grade intelligence on Polymarket\'s most profitable traders. Real-time data feeds, AI-powered insights, and actionable signals.',
+    url: 'https://polyburg.com',
+    operatingSystem: 'Web Browser',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'Polyburg',
+      url: 'https://polyburg.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Polyburg',
+      url: 'https://polyburg.com',
+    },
+    featureList: [
+      'Real-time smart wallet tracking',
+      'AI-powered trading insights',
+      'Polymarket intelligence',
+      'Professional trader signals',
+    ],
+  };
+
+  const websiteStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Polyburg',
+    url: 'https://polyburg.com',
+    description: 'See what profitable Polymarket wallets are buying before everyone else. AI-powered insights and real-time alerts.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://polyburg.com/search?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  return (
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
+      />
+      
+      <main className="min-h-screen bg-terminal-bg text-terminal-primary relative overflow-hidden">
+        {/* Retro grid background */}
+        <RetroGrid />
+      
+      {/* Hero Section */}
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="text-center space-y-6 sm:space-y-8 mb-12 sm:mb-16">
+          {/* Headline */}
+          <h1 className="text-4xl md:text-6xl font-mono font-bold glow-text">
+            See what smart wallets are buying
+            <br />
+            <span className="text-terminal-secondary">before everyone else notices</span>
+          </h1>
+          
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl max-w-4xl mx-auto text-terminal-muted">
+            Professional-grade intelligence on Polymarket&apos;s most profitable traders. 
+            Real-time data feeds. AI-powered insights. Actionable signals.
+          </p>
+          
+          {/* Live stats ticker */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center font-mono max-w-2xl mx-auto">
+            <div>
+              <div className="text-xl sm:text-2xl font-bold text-terminal-success">
+                <NumberTicker value={1247} />
+              </div>
+              <div className="text-xs sm:text-sm text-terminal-muted">Monitored Wallets</div>
+            </div>
+            <div>
+              <div className="text-xl sm:text-2xl font-bold text-terminal-primary">
+                $<NumberTicker value={2.4} decimalPlaces={1} />M
+              </div>
+              <div className="text-xs sm:text-sm text-terminal-muted">Daily Volume</div>
+            </div>
+            <div>
+              <div className="text-xl sm:text-2xl font-bold text-terminal-secondary">
+                <NumberTicker value={87.3} decimalPlaces={1} />%
+              </div>
+              <div className="text-xs sm:text-sm text-terminal-muted">Accuracy Rate</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bloomberg-style Dashboard */}
+        <BentoGrid className="max-w-7xl mx-auto mb-12 sm:mb-16">
+          {/* Terminal Interface */}
+          <BentoCard
+            name="POLYBURG TERMINAL"
+            className="col-span-1 row-span-1 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2"
+            description="Live command interface for smart wallet intelligence"
+          >
+            <div className="h-full p-3 md:p-4">
+              <Terminal className="w-full h-full" />
+            </div>
+          </BentoCard>
+
+          {/* Live Trading Activity */}
+          <BentoCard
+            name="LIVE ACTIVITY FEED"
+            className="col-span-1 row-span-1 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2"
+            description="Real-time smart wallet transactions"
+          >
+            <div className="h-full p-3 md:p-4 overflow-hidden">
+              <AnimatedList delay={3000} className="space-y-1 md:space-y-2">
+                {demoTradingActivity.map((activity, idx) => (
+                  <TradingActivity key={idx} {...activity} />
+                ))}
+              </AnimatedList>
+            </div>
+          </BentoCard>
+
+          {/* Top Performers */}
+          <BentoCard
+            name="TOP PERFORMERS"
+            className="col-span-1 row-span-1 md:col-span-2 lg:col-span-2"
+            description="Highest profit wallets in the last 24 hours"
+          >
+            <div className="h-full p-3 md:p-4 space-y-2 md:space-y-3 overflow-hidden">
+              {demoWalletRankings.map((wallet, idx) => (
+                <WalletRanking key={idx} {...wallet} />
+              ))}
+            </div>
+          </BentoCard>
+
+          {/* Market Overview */}
+          <BentoCard
+            name="MARKET OVERVIEW"
+            className="col-span-1 row-span-1 md:col-span-1 lg:col-span-1"
+            description="Key market metrics and trends"
+          >
+            <div className="h-full p-3 md:p-4 font-mono text-sm space-y-3 md:space-y-4">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
+                <div>
+                  <div className="text-terminal-muted text-xs">TOTAL VOLUME</div>
+                  <div className="text-base md:text-lg font-bold text-terminal-primary">
+                    $<NumberTicker value={2.4} decimalPlaces={1} />M
+                  </div>
+                </div>
+                <div>
+                  <div className="text-terminal-muted text-xs">ACTIVE TRADERS</div>
+                  <div className="text-base md:text-lg font-bold text-terminal-secondary">
+                    <NumberTicker value={3247} />
+                  </div>
+                </div>
+                <div>
+                  <div className="text-terminal-muted text-xs">AVG PROFIT</div>
+                  <div className="text-base md:text-lg font-bold text-terminal-success">
+                    +<NumberTicker value={12.3} decimalPlaces={1} />%
+                  </div>
+                </div>
+                <div>
+                  <div className="text-terminal-muted text-xs">SUCCESS RATE</div>
+                  <div className="text-base md:text-lg font-bold text-terminal-primary">
+                    <NumberTicker value={76.8} decimalPlaces={1} />%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </BentoCard>
+        </BentoGrid>
+
+        {/* CTA Section - Desktop */}
+        <div className="text-center space-y-6 px-4 hidden sm:block">
+          <div className="max-w-md mx-auto">
+            <label htmlFor="desktop-invite-code" className="sr-only">
+              Enter exclusive invite code
+            </label>
+            <input
+              id="desktop-invite-code"
+              type="text"
+              placeholder="Enter exclusive invite code"
+              className="w-full px-4 py-3 bg-terminal-bg border border-terminal-border rounded-lg text-terminal-primary font-mono focus:border-terminal-primary focus:outline-none focus:ring-2 focus:ring-terminal-primary focus:ring-opacity-50 text-sm sm:text-base"
+              aria-describedby="desktop-cta-desc"
+            />
+          </div>
+          <button 
+            className="w-full max-w-sm mx-auto px-6 py-3 sm:px-8 sm:py-4 bg-terminal-primary text-terminal-bg font-bold rounded-lg hover:glow-border transition-all font-mono text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-terminal-primary focus:ring-opacity-50"
+            aria-describedby="desktop-cta-desc"
+          >
+            Launch Polyburg Terminal →
+          </button>
+          <p id="desktop-cta-desc" className="text-terminal-muted text-xs sm:text-sm max-w-sm mx-auto">
+            Professional traders only. Invite-only access.
+          </p>
+        </div>
+
+        {/* Mobile CTA Section - Basic (visible) */}
+        <div className="text-center space-y-4 px-4 pb-24 sm:hidden">
+          <p className="text-terminal-muted text-xs max-w-sm mx-auto">
+            Professional traders only. Invite-only access.
+          </p>
+        </div>
+      </section>
+
+      {/* Floating Mobile CTA - Fixed bottom */}
+      <div 
+        className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-terminal-bg border-t border-terminal-border p-4 backdrop-blur-sm bg-opacity-95"
+        role="region"
+        aria-label="Main call to action"
+      >
+        <div className="max-w-sm mx-auto space-y-3">
+          <label htmlFor="mobile-invite-code" className="sr-only">
+            Enter exclusive invite code
+          </label>
+          <input
+            id="mobile-invite-code"
+            type="text"
+            placeholder="Enter invite code"
+            className="w-full px-4 py-3 bg-terminal-bg border border-terminal-border rounded-lg text-terminal-primary font-mono focus:border-terminal-primary focus:outline-none focus:ring-2 focus:ring-terminal-primary focus:ring-opacity-50 text-sm"
+            aria-describedby="mobile-cta-desc"
+          />
+          <button 
+            className="w-full px-6 py-3 bg-terminal-primary text-terminal-bg font-bold rounded-lg hover:glow-border transition-all font-mono text-sm focus:outline-none focus:ring-2 focus:ring-terminal-primary focus:ring-opacity-50"
+            aria-describedby="mobile-cta-desc"
+          >
+            Launch Terminal →
+          </button>
+          <p id="mobile-cta-desc" className="sr-only">
+            Professional traders only. Invite-only access to Polyburg Terminal.
+          </p>
+        </div>
+      </div>
+        </main>
+    </>
+  );
+} 

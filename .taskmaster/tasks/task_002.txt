@@ -1,0 +1,21 @@
+# Task ID: 2
+# Title: Implement Core Typography and Color System
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Set up the typography and color system according to the design requirements in the PRD.
+# Details:
+1. Configure Tailwind CSS theme in `tailwind.config.js` with the specified colors:
+   - Terminal Green: #00FF41
+   - Deep Black: #0A0A0A
+   - Success Green: #10B981
+   - Alert Amber: #F59E0B
+2. Import and configure the required fonts:
+   - Headers: Space Mono or JetBrains Mono
+   - Body: Inter
+3. Create typography utility classes for consistent text styling
+4. Implement a theme provider if necessary for global styling
+5. Create a style guide component to showcase the typography and color system
+
+# Test Strategy:
+Create a test page that displays all typography elements and color swatches. Verify that the fonts are loading correctly and that the color system matches the PRD specifications. Test across different browsers to ensure consistency.

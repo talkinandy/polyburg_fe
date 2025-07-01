@@ -1,0 +1,18 @@
+# Task ID: 11
+# Title: Implement Social Proof Section
+# Status: pending
+# Dependencies: 3
+# Priority: medium
+# Description: Create the social proof section with placeholders for user statistics and testimonials.
+# Details:
+1. Create a component for the social proof section
+2. Implement placeholders for the following statistics:
+   - "Join [X] traders already tracking smart money"
+   - "$[X]M in profitable trades identified"
+3. Add placeholders for 2-3 testimonials from beta users
+4. Style the section to match the terminal theme
+5. Implement responsive layout for the statistics and testimonials
+6. Ensure the placeholders can be easily updated with real data
+
+# Test Strategy:
+Verify that the placeholders display correctly and can be updated with real data. Test the layout at different screen sizes to ensure responsiveness. Validate the accessibility of the social proof elements.
