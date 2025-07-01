@@ -1,25 +1,23 @@
 {
   "name": "Polyburg Terminal",
   "short_name": "Polyburg",
-  "description": "Professional-grade intelligence on Polymarket's most profitable traders",
+  "description": "See what smart wallets are buying before everyone else notices",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#FF8C00",
+  "theme_color": "#ff9100",
   "orientation": "portrait-primary",
   "categories": ["finance", "business", "productivity"],
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/polyburg-square-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512", 
-      "type": "image/png",
-      "purpose": "any maskable"
+      "src": "/polyburg-square-512.png", 
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 } 

@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 0%; /* #000000 Bloomberg black */
-  --foreground: 28 100% 50%; /* #FF8C00 Bloomberg amber */
+  --background: 0 0% 0%; /* #000000 Polyburg black */
+  --foreground: 25 100% 50%; /* #ff9100 Polyburg orange */
+  --accent: 195 100% 50%; /* #00c8ff Polyburg cyan */
 }
 
 * {
@@ -63,7 +64,7 @@ body {
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: #FF8C00;
+  background: #ff9100;
 }
 
 @keyframes blink {

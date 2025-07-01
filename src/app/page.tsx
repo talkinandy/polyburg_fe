@@ -3,6 +3,7 @@ import Terminal from '@/components/magicui/terminal';
 import NumberTicker from '@/components/magicui/number-ticker';
 import RetroGrid from '@/components/magicui/retro-grid';
 import { AnimatedList, TradingActivity, WalletRanking } from '@/components/magicui/animated-list';
+import Logo from '@/components/ui/logo';
 
 export default function HomePage() {
   // Demo data for Bloomberg-style displays
@@ -119,6 +120,19 @@ export default function HomePage() {
       <main className="min-h-screen bg-terminal-bg text-terminal-primary relative overflow-hidden">
         {/* Retro grid background */}
         <RetroGrid />
+        
+        {/* Header */}
+        <header className="relative z-10 border-b border-terminal-primary/20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex justify-between items-center">
+              <Logo variant="landscape" size="lg" priority />
+              <div className="flex items-center space-x-4 font-mono text-sm">
+                <span className="text-terminal-success">●</span>
+                <span className="text-terminal-muted">LIVE</span>
+              </div>
+            </div>
+          </div>
+        </header>
       
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

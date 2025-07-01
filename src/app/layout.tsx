@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Space_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -17,22 +17,26 @@ const spaceMono = Space_Mono({
   preload: true,
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#ff9100',
+  colorScheme: 'dark',
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://polyburg.com'),
-  title: 'Polyburg - Smart Wallet Tracking for Polymarket Traders',
-  description: 'See what profitable Polymarket wallets are buying before everyone else. AI-powered insights and real-time alerts.',
+  title: 'Polyburg Terminal - Smart Wallet Intelligence',
+  description: 'See what smart wallets are buying before everyone else notices. Professional-grade intelligence on Polymarket\'s most profitable traders.',
   keywords: ['polymarket', 'prediction markets', 'smart wallets', 'trading signals', 'polyburg', 'crypto trading', 'wallet tracking'],
   authors: [{ name: 'Polyburg Team' }],
   creator: 'Polyburg Team',
   publisher: 'Polyburg',
   applicationName: 'Polyburg Terminal',
-  viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#FF8C00',
-  colorScheme: 'dark',
   openGraph: {
-    siteName: 'Polyburg',
-    title: 'Polyburg - Smart Wallet Tracking for Polymarket Traders',
-    description: 'See what profitable Polymarket wallets are buying before everyone else. AI-powered insights and real-time alerts.',
+    siteName: 'Polyburg Terminal',
+    title: 'Polyburg Terminal - Smart Wallet Intelligence',
+    description: 'See what smart wallets are buying before everyone else notices. Professional-grade intelligence on Polymarket\'s most profitable traders.',
     type: 'website',
     locale: 'en_US',
     url: 'https://polyburg.com',
@@ -50,8 +54,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@polyburg',
     creator: '@polyburg',
-    title: 'Polyburg - Smart Wallet Tracking for Polymarket Traders',
-    description: 'See what profitable Polymarket wallets are buying before everyone else. AI-powered insights and real-time alerts.',
+    title: 'Polyburg Terminal - Smart Wallet Intelligence',
+    description: 'See what smart wallets are buying before everyone else notices. Professional-grade intelligence on Polymarket\'s most profitable traders.',
     images: [
       {
         url: '/og-image.png',
@@ -78,16 +82,13 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/polyburg-square-64.png', sizes: '64x64', type: 'image/png' },
+      { url: '/polyburg-square-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/polyburg-square-512.png', sizes: '512x512', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      { rel: 'android-chrome-192x192', url: '/android-chrome-192x192.png' },
-      { rel: 'android-chrome-512x512', url: '/android-chrome-512x512.png' },
+      { url: '/polyburg-square-192.png', sizes: '192x192', type: 'image/png' },
     ],
   },
   appleWebApp: {

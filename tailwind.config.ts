@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Bloomberg Terminal color scheme - professional financial terminal aesthetic
+        // Polyburg Terminal color scheme - professional financial terminal aesthetic
         terminal: {
           bg: '#000000',
-          primary: '#FF8C00', // Bloomberg amber
-          secondary: '#00BFFF', // Light blue
+          primary: '#ff9100', // Polyburg orange
+          secondary: '#00c8ff', // Polyburg cyan
           success: '#32CD32', // Lime green for profits
           danger: '#FF4444', // Red for losses
           muted: '#666666', // Gray for secondary info
@@ -23,15 +23,15 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: '#FF8C00',
+          DEFAULT: '#ff9100',
           foreground: '#000000',
         },
         secondary: {
-          DEFAULT: '#00BFFF',
+          DEFAULT: '#00c8ff',
           foreground: '#000000',
         },
         accent: {
-          DEFAULT: '#32CD32',
+          DEFAULT: '#00c8ff',
           foreground: '#000000',
         },
       },
