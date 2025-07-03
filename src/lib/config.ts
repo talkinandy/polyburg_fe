@@ -13,10 +13,11 @@ const requiredEnvVars = {
 
 // Check for missing required variables
 const missingVars = Object.entries(requiredEnvVars)
-  .filter(([_, value]) => !value)
+  .filter(([, value]) => !value)
   .map(([key]) => key);
 
-if (missingVars.length > 0) {
+if (missingVars.length > 0 && process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line no-console
   console.warn(`Missing environment variables: ${missingVars.join(', ')}`);
 }
 
