@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Space_Mono } from 'next/font/google';
 import './globals.css';
+import { config } from '@/lib/config';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -25,21 +26,21 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://polyburg.com'),
-  title: 'Polyburg Terminal - Smart Wallet Intelligence',
-  description: 'See what smart wallets are buying before everyone else notices. Professional-grade intelligence on Polymarket\'s most profitable traders.',
-  keywords: ['polymarket', 'prediction markets', 'smart wallets', 'trading signals', 'polyburg', 'crypto trading', 'wallet tracking'],
-  authors: [{ name: 'Polyburg Team' }],
-  creator: 'Polyburg Team',
-  publisher: 'Polyburg',
+  metadataBase: new URL(config.domain.url),
+  title: config.meta.title,
+  description: config.meta.description,
+  keywords: config.meta.keywords,
+  authors: [{ name: config.meta.authors }],
+  creator: config.meta.authors,
+  publisher: config.social.companyName,
   applicationName: 'Polyburg Terminal',
   openGraph: {
     siteName: 'Polyburg Terminal',
-    title: 'Polyburg Terminal - Smart Wallet Intelligence',
-    description: 'See what smart wallets are buying before everyone else notices. Professional-grade intelligence on Polymarket\'s most profitable traders.',
+    title: config.meta.title,
+    description: config.meta.description,
     type: 'website',
     locale: 'en_US',
-    url: 'https://polyburg.com',
+    url: config.domain.url,
     images: [
       {
         url: '/og-image.png',
@@ -52,10 +53,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@polyburg',
-    creator: '@polyburg',
-    title: 'Polyburg Terminal - Smart Wallet Intelligence',
-    description: 'See what smart wallets are buying before everyone else notices. Professional-grade intelligence on Polymarket\'s most profitable traders.',
+    site: config.social.twitterHandle,
+    creator: config.social.twitterHandle,
+    title: config.meta.title,
+    description: config.meta.description,
     images: [
       {
         url: '/og-image.png',
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
     google: 'verification-token-here',
   },
   alternates: {
-    canonical: 'https://polyburg.com',
+    canonical: config.domain.url,
   },
   manifest: '/manifest.json',
   icons: {
