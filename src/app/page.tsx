@@ -135,7 +135,7 @@ export default function HomePage() {
         </header>
       
       {/* Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 scanline-effect">
         <div className="text-center space-y-6 sm:space-y-8 mb-12 sm:mb-16">
           {/* Headline */}
           <h1 className="text-4xl md:text-6xl font-mono font-bold glow-text">
@@ -146,8 +146,8 @@ export default function HomePage() {
           
           {/* Subheadline */}
           <p className="text-lg md:text-xl max-w-4xl mx-auto text-terminal-muted">
-            Professional-grade intelligence on Polymarket&apos;s most profitable traders. 
-            Real-time data feeds. AI-powered insights. Actionable signals.
+            Real-time intelligence on Polymarket&apos;s most profitable traders. 
+            AI-powered insights. Daily wallet rankings. Actionable signals.
           </p>
           
           {/* Live stats ticker */}
@@ -181,7 +181,7 @@ export default function HomePage() {
             className="col-span-1 row-span-1 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2"
             description="Live command interface for smart wallet intelligence"
           >
-            <div className="h-full p-3 md:p-4">
+            <div className="h-full p-3 md:p-4 scanline-effect">
               <Terminal className="w-full h-full" />
             </div>
           </BentoCard>
