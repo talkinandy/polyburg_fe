@@ -4,6 +4,8 @@ import NumberTicker from '@/components/magicui/number-ticker';
 import RetroGrid from '@/components/magicui/retro-grid';
 import { AnimatedList, TradingActivity, WalletRanking } from '@/components/magicui/animated-list';
 import Logo from '@/components/ui/logo';
+import ProblemStatement from '@/components/ui/problem-statement';
+import EnhancedCTA from '@/components/ui/enhanced-cta';
 
 export default function HomePage() {
   // Demo data for Bloomberg-style displays
@@ -173,8 +175,12 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Bloomberg-style Dashboard */}
-        <BentoGrid className="max-w-7xl mx-auto mb-12 sm:mb-16">
+        {/* Problem Statement Section - Moved above terminal */}
+        <ProblemStatement className="scanline-effect mb-12 sm:mb-16" />
+
+        {/* Bloomberg-style Dashboard with Enhanced CTA Overlay */}
+        <div className="relative max-w-7xl mx-auto mb-12 sm:mb-16">
+          <BentoGrid className="w-full" data-bento-grid>
           {/* Terminal Interface */}
           <BentoCard
             name="POLYBURG TERMINAL"
@@ -249,69 +255,13 @@ export default function HomePage() {
               </div>
             </div>
           </BentoCard>
-        </BentoGrid>
-
-        {/* CTA Section - Desktop */}
-        <div className="text-center space-y-6 px-4 hidden sm:block">
-          <div className="max-w-md mx-auto">
-            <label htmlFor="desktop-invite-code" className="sr-only">
-              Enter exclusive invite code
-            </label>
-            <input
-              id="desktop-invite-code"
-              type="text"
-              placeholder="Enter exclusive invite code"
-              className="w-full px-4 py-3 bg-terminal-bg border border-terminal-border rounded-lg text-terminal-primary font-mono focus:border-terminal-primary focus:outline-none focus:ring-2 focus:ring-terminal-primary focus:ring-opacity-50 text-sm sm:text-base"
-              aria-describedby="desktop-cta-desc"
-            />
-          </div>
-          <button 
-            className="w-full max-w-sm mx-auto px-6 py-3 sm:px-8 sm:py-4 bg-terminal-primary text-terminal-bg font-bold rounded-lg hover:glow-border transition-all font-mono text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-terminal-primary focus:ring-opacity-50"
-            aria-describedby="desktop-cta-desc"
-          >
-            Launch Polyburg Terminal →
-          </button>
-          <p id="desktop-cta-desc" className="text-terminal-muted text-xs sm:text-sm max-w-sm mx-auto">
-            Professional traders only. Invite-only access.
-          </p>
-        </div>
-
-        {/* Mobile CTA Section - Basic (visible) */}
-        <div className="text-center space-y-4 px-4 pb-24 sm:hidden">
-          <p className="text-terminal-muted text-xs max-w-sm mx-auto">
-            Professional traders only. Invite-only access.
-          </p>
+          </BentoGrid>
+          
+          {/* Enhanced CTA Overlay */}
+          <EnhancedCTA />
         </div>
       </section>
 
-      {/* Floating Mobile CTA - Fixed bottom */}
-      <div 
-        className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-terminal-bg border-t border-terminal-border p-4 backdrop-blur-sm bg-opacity-95"
-        role="region"
-        aria-label="Main call to action"
-      >
-        <div className="max-w-sm mx-auto space-y-3">
-          <label htmlFor="mobile-invite-code" className="sr-only">
-            Enter exclusive invite code
-          </label>
-          <input
-            id="mobile-invite-code"
-            type="text"
-            placeholder="Enter invite code"
-            className="w-full px-4 py-3 bg-terminal-bg border border-terminal-border rounded-lg text-terminal-primary font-mono focus:border-terminal-primary focus:outline-none focus:ring-2 focus:ring-terminal-primary focus:ring-opacity-50 text-sm"
-            aria-describedby="mobile-cta-desc"
-          />
-          <button 
-            className="w-full px-6 py-3 bg-terminal-primary text-terminal-bg font-bold rounded-lg hover:glow-border transition-all font-mono text-sm focus:outline-none focus:ring-2 focus:ring-terminal-primary focus:ring-opacity-50"
-            aria-describedby="mobile-cta-desc"
-          >
-            Launch Terminal →
-          </button>
-          <p id="mobile-cta-desc" className="sr-only">
-            Professional traders only. Invite-only access to Polyburg Terminal.
-          </p>
-        </div>
-      </div>
         </main>
     </>
   );

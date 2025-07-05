@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 interface BentoGridProps {
   children: ReactNode;
   className?: string;
+  [key: string]: any; // Allow additional props like data attributes
 }
 
 interface BentoCardProps {
@@ -17,7 +18,7 @@ interface BentoCardProps {
   children?: ReactNode;
 }
 
-const BentoGrid = ({ children, className }: BentoGridProps) => {
+const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
   return (
     <div
       className={cn(
@@ -29,6 +30,7 @@ const BentoGrid = ({ children, className }: BentoGridProps) => {
         'lg:auto-rows-[22rem] lg:grid-cols-3',
         className,
       )}
+      {...props}
     >
       {children}
     </div>

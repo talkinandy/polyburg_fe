@@ -24,8 +24,23 @@ export default function Terminal({
 }: TerminalProps) {
   const [lines, setLines] = useState<TerminalLine[]>(initialLines);
   const [currentInput, setCurrentInput] = useState('');
+  const [currentTime, setCurrentTime] = useState('');
+  const [isClient, setIsClient] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
+
+  // Fix hydration by ensuring client-side mounting
+  useEffect(() => {
+    setIsClient(true);
+    setCurrentTime(new Date().toLocaleTimeString());
+    
+    // Update time every second
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Auto-scroll to bottom when new lines are added
   useEffect(() => {
@@ -36,6 +51,8 @@ export default function Terminal({
 
   // Demo data simulation
   useEffect(() => {
+    if (!isClient) return;
+    
     const demoLines: TerminalLine[] = [
       { type: 'output', content: 'POLYBURG TERMINAL v1.0 - Smart Wallet Intelligence' },
       { type: 'output', content: 'Connected to Polymarket data feed...' },
@@ -55,7 +72,7 @@ export default function Terminal({
     ];
 
     setLines(demoLines);
-  }, []);
+  }, [isClient]);
 
   const handleInputSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,7 +117,7 @@ export default function Terminal({
             <span className="text-terminal-primary font-semibold">{title}</span>
           </div>
           <div className="text-terminal-muted text-xs">
-            {new Date().toLocaleTimeString()}
+            {isClient ? currentTime : '00:00:00'}
           </div>
         </div>
       )}
